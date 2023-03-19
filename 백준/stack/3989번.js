@@ -15,5 +15,4 @@ const isGoodStr = (str) => {
 };
 
 const countGood = input.reduce((acc, str) => acc + isGoodStr(str), 0);
-
 console.log(countGood);
