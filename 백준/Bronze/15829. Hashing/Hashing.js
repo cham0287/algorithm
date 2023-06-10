@@ -5,11 +5,13 @@ const N = input.shift();
 const strArr = input.pop().split('');
 
 const formatAlphabet = (alphabet, index) => {
-  return (alphabet.charCodeAt(0) - 96) * 31 ** index%1234567891;
+  let r = 31 ** index % 1234567891;
+  return ((alphabet.charCodeAt(0) - 96) * r) % 1234567891;
 };
-const result = strArr.reduce(
-  (sum, alphabet, index) => sum + formatAlphabet(alphabet, index),
-  0
-);
+
+let result = 0;
+for (let i = 0; i < strArr.length; i++) {
+  result += formatAlphabet(strArr[i], i);
+}
 
 console.log(result);
