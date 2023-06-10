@@ -5,7 +5,7 @@ const N = input.shift();
 const strArr = input.pop().split('');
 
 const formatAlphabet = (alphabet, index) => {
-  return (alphabet.charCodeAt(0) - 96) * 31 ** index;
+  return (alphabet.charCodeAt(0) - 96) * 31 ** index%1234567891;
 };
 const result = strArr.reduce(
   (sum, alphabet, index) => sum + formatAlphabet(alphabet, index),
