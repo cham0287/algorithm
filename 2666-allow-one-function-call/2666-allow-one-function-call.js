@@ -4,11 +4,9 @@
  */
 var once = function(fn) {
     let calls = 0;
-    let value = 0;
     return function(...args){
         calls++;
-        value = fn(...args);
-        if(calls===1) return value
+        if(calls===1) return fn(...args);
     }
 };
 
